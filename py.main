@@ -1,0 +1,31 @@
+import random
+
+
+def swb_game():
+    choices = ["snake", "water", "bomb"]
+    user_choice = input("Enter your choice (snake/water/bomb): ")
+    computer_choice = random.choice(choices)
+    print(f"Computer's choice is: {computer_choice}")
+
+    if user_choice == computer_choice:
+        return "Tie!"
+    elif user_choice == "snake":
+        if computer_choice == "water":
+            return "You win!"
+        else:
+            return "Computer wins!"
+    elif user_choice == "water":
+        if computer_choice == "bomb":
+            return "You win!"
+        else:
+            return "Computer wins!"
+    elif user_choice == "bomb":
+        if computer_choice == "snake":
+            return "You win!"
+        else:
+            return "Computer wins!"
+    else:
+        return "Invalid input! You have not entered snake, water, or bomb."
+
+
+print(swb_game())
